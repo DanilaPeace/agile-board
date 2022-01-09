@@ -1,5 +1,5 @@
 import qs from "query-string";
-export const DOMAIN = "http://localhost:3001/";
+export const DOMAIN = "http://localhost:3001";
 
 // Class to wort with api
 class ApiCall {
@@ -15,8 +15,8 @@ class ApiCall {
         "Content-Type": "application/json",
       },
     });
-
-    return request.json();
+    let body = await request.json();
+    return body;
   }
 
   async get(path, searchParams = {}) {
